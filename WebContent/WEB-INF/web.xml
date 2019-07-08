@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>demo.Basic</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>welcomeServlet</servlet-name>
+		<servlet-class>demo.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>logicServlet</servlet-name>
+		<servlet-class>demo.LogicServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/CheckIn-CheckOut</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>welcomeServlet</servlet-name>
+		<url-pattern>/servlet1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>logicServlet</servlet-name>
+		<url-pattern>/servlet2</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+</web-app>
