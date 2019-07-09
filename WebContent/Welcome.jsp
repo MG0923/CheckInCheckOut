@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <title>Pendrive Portal</title>
 </head>
-<body>
+<body background="images/bgimage.jpg">
 	<%
 		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
 		response.setHeader("Pragma","no-cache");
@@ -22,9 +22,10 @@
 		} else {%>
 	 <br />
 	<br />
+	<font color="white">
 	<center>
 		<h2>Welcome to Pendrive Check-in / Check-out Portal</h2>
-	</center>
+	</center></font>
 	<br />
 	<br />
 	<form action="servlet2" method="post">
@@ -47,8 +48,9 @@
 			if (fileEmpty == 1) {
 		%>
 		<br /> <br />
+		
 		<center>
-			<b>Click here to use the Pendrive</b> &emsp;&emsp;
+			<font color="white"><b>Click here to use the Pendrive</b></font> &emsp;&emsp;
 			<div class="container-login100-form-checkout">
 				<input class="login100-form-checkout" type="submit"
 					value="Check-Out" name="checkout" />
@@ -56,7 +58,7 @@
 		</center>
 		<br /> <br />
 		<center>
-			<b>Click here to return the Pendrive</b> &emsp;
+			<font color="white"><b>Click here to return the Pendrive</b></font> &emsp;
 			<div class="container-login100-form-checkin">
 				<input class="login100-form-checkin disabled" type="submit"
 					value="Check-In" name="checkin" disabled="disabled" />
@@ -68,7 +70,7 @@
 		<%
 			if (flag == 1) {
 		%>
-		<font color="red">
+		<font color="yellow">
 			<center>
 				<p>
 				<h2>
@@ -82,8 +84,9 @@
 		<%
 			if (fileUserName.equals(loginUserName)) {
 		%>
+		
 		<center>
-			<b>Click here to use the Pendrive</b> &emsp;&emsp;
+			<font color="white"><b>Click here to use the Pendrive</b></font> &emsp;&emsp;
 			<div class="container-login100-form-checkout">
 				<input class="login100-form-checkout disabled" type="submit"
 					value="Check-Out" disabled="disabled" />
@@ -91,7 +94,7 @@
 		</center>
 		<br /> <br />
 		<center>
-			<b>Click here to return the Pendrive</b> &emsp;
+			<font color="white"><b>Click here to return the Pendrive</b></font> &emsp;
 			<div class="container-login100-form-checkin">
 				<input class="login100-form-checkin" type="submit" value="Check-In"
 					name="checkin" />
@@ -101,7 +104,7 @@
 			} else {
 		%>
 		<center>
-			<b>Click here to use the Pendrive</b> &emsp;&emsp;
+			<font color="white"><b>Click here to use the Pendrive</b></font> &emsp;&emsp;
 			<div class="container-login100-form-checkout">
 				<input class="login100-form-checkout disabled" type="submit"
 					value="Check-Out" disabled="disabled" />
@@ -109,7 +112,7 @@
 		</center>
 		<br /> <br />
 		<center>
-			<b>Click here to return the Pendrive</b> &emsp;
+			<font color="white"><b>Click here to return the Pendrive</b></font> &emsp;
 			<div class="container-login100-form-checkin">
 				<input class="login100-form-checkin disabled" type="submit"
 					value="Check-In" disabled="disabled" />
@@ -121,7 +124,7 @@
 		<%
 			} else {
 		%>
-		<font color="blue">
+		<font color="cyan">
 			<center>
 				<p>
 				<h2>
@@ -131,7 +134,7 @@
 			</center>
 		</font> <br /> <br />
 		<center>
-			<b>Click here to use the Pendrive</b> &emsp;&emsp;
+			<font color="white"><b>Click here to use the Pendrive</b></font> &emsp;&emsp;
 			<div class="container-login100-form-checkout">
 				<input class="login100-form-checkout" type="submit"
 					value="Check-Out" name="checkout" />
@@ -139,7 +142,7 @@
 		</center>
 		<br /> <br />
 		<center>
-			<b>Click here to return the Pendrive</b> &emsp;
+			<font color="white"><b>Click here to return the Pendrive</b></font> &emsp;
 			<div class="container-login100-form-checkin">
 				<input class="login100-form-checkin disabled" type="submit"
 					value="Check-In" name="checkin" disabled="disabled" />
