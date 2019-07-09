@@ -32,15 +32,19 @@ public class WelcomeServlet extends HttpServlet
 	private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.setContentType("text/html");
+		response.setContentType("text/html"); 
 		PrintWriter out = response.getWriter();
+		
+		out.println("  <html>");
+		out.println("  <body background=\"images/bgimage.jpg\">");
+		out.println("  </body></html>");
+		
 		HttpSession session=request.getSession();
 		String name=(String) session.getAttribute("username");//request.getParameter("userName");
 		String sCurrentLine;
 		String lastLine = "";
 		String[] status = null;
 		int flag=0;
-		
 		//session.setAttribute("USER",name);
 		Path path=FileSystems.getDefault().getPath("mohit");
 		System.out.println(Paths.get("").toAbsolutePath().toString());
