@@ -96,12 +96,14 @@ public class LogicServlet extends HttpServlet {
 				if (file.length()==0)
 				{
 					if (file.delete()) {
+						session.invalidate();
 						out.println("<script type=\"text/javascript\">");
 						out.println("alert('File successfully Deleted');");
 						out.println("location='login.html';");
 						out.println("</script>");
 						System.out.println(file.getName() + " is deleted!");
 					} else {
+						session.invalidate();
 						out.println("<script type=\"text/javascript\">");
 						out.println("alert('Error in File deletion. Please try again.');");
 						out.println("location='login.html';");
