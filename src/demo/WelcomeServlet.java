@@ -36,7 +36,8 @@ public class WelcomeServlet extends HttpServlet
 		PrintWriter out = response.getWriter();
 		
 		out.println("  <html>");
-		out.println("  <body background=\"images/bgimage.jpg\">");
+		out.println("  <body style=\"background:url(images/black.jpg);background-repeat:no-repeat;background-size:100% 100%;\r\n" + 
+				"	height:700px;background-attachment: fixed\">");
 		out.println("  </body></html>");
 		
 		HttpSession session=request.getSession();

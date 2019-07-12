@@ -13,12 +13,15 @@
 	href="vendor/bootstrap/css/bootstrap.min.css">
 <title>Pendrive Portal</title>
 </head>
-<body background="images/bgimage.jpg">
+<body style="background:url(images/black.jpg);background-repeat:no-repeat;background-size:100% 100%;
+	height:700px;background-attachment: fixed">
 <div class="limiter">
 	<%
 		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
 		response.setHeader("Pragma","no-cache");
 		response.setHeader("Expires","0");    //Proxies
+		response.setDateHeader("Expires", -1);
+		
 	%>
 	<%
 		if(session.getAttribute("username")==null)
