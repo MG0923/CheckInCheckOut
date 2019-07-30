@@ -14,6 +14,7 @@ import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -81,11 +82,11 @@ public class LogicServlet extends HttpServlet {
 			if (logoutButton.equals("Logout")) {
 				System.out.println("Inside logout");
 				session.invalidate();
+				File lockFile = new File(Paths.get("").toAbsolutePath().toString() + "/lock.txt");
+				lockFile.delete();
 				out.println("<script type=\"text/javascript\">");
 				out.println("location='login.html';");
 				out.println("</script>");
-				//RequestDispatcher rd = request.getRequestDispatcher("login.html");
-				//rd.forward(request, response);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
