@@ -48,17 +48,15 @@ public class LogicServlet extends HttpServlet {
 		} else {
 			System.out.println("File already exists.");
 		}
-		System.out.println("Button name checkout " + checkOutButton);
-		System.out.println("Button name checkin " + checkInButton);
 		if (checkOutButton == null) {
 			if (checkInButton == null) {
 			} else if (checkInButton.equals("Check-In")) {
 				// Write Content
 				FileWriter writer = new FileWriter(file, true);
-				writer.write(
-						session.getAttribute("username") + "\t" + "Checked-in" + "\t" + sdf.format(cal.getTime()) + "\n");
-				writer.close();	
-				//For Log Purpose reading a line on each check-in
+				writer.write(session.getAttribute("username") + "\t" + "Checked-in" + "\t" + sdf.format(cal.getTime())
+						+ "\n");
+				writer.close();
+				// reading a line on each check-in
 				BufferedReader br = new BufferedReader(
 						new FileReader(Paths.get("").toAbsolutePath().toString() + "/log.txt"));
 				while ((sCurrentLine = br.readLine()) != null) {
@@ -66,15 +64,16 @@ public class LogicServlet extends HttpServlet {
 				}
 				br.close();
 				RequestDispatcher rd = request.getRequestDispatcher("servlet1");
-				rd.forward(request,response);
+				rd.forward(request, response);
 			}
 		} else if (checkOutButton.equals("Check-Out")) {
 			// Write Content
 			FileWriter writer = new FileWriter(file, true);
-			writer.write(session.getAttribute("username") + "\t" + "Checked-out" + "\t" + sdf.format(cal.getTime()) + "\n");
+			writer.write(
+					session.getAttribute("username") + "\t" + "Checked-out" + "\t" + sdf.format(cal.getTime()) + "\n");
 			writer.close();
 			RequestDispatcher rd = request.getRequestDispatcher("servlet1");
-			rd.forward(request,response);
+			rd.forward(request, response);
 		}
 		System.out.println("Logout button name" + logoutButton);
 
@@ -94,8 +93,7 @@ public class LogicServlet extends HttpServlet {
 		}
 		if (deleteFileButton.equals("DeleteFile")) {
 			try {
-				if (file.length()==0)
-				{
+				if (file.length() == 0) {
 					if (file.delete()) {
 						session.invalidate();
 						out.println("<script type=\"text/javascript\">");
@@ -111,9 +109,7 @@ public class LogicServlet extends HttpServlet {
 						out.println("</script>");
 						System.out.println("Delete operation is failed.");
 					}
-				}
-				else
-				{
+				} else {
 					BufferedReader br = new BufferedReader(
 							new FileReader(Paths.get("").toAbsolutePath().toString() + "/log.txt"));
 					while ((sCurrentLine = br.readLine()) != null) {
@@ -144,7 +140,7 @@ public class LogicServlet extends HttpServlet {
 						}
 					}
 				}
-				
+
 			} catch (Exception e) {
 
 				e.printStackTrace();

@@ -62,10 +62,7 @@ public class WelcomeServlet extends HttpServlet {
 		}
 
 		BufferedReader br = new BufferedReader(new FileReader(Paths.get("").toAbsolutePath().toString() + "/log.txt"));
-		// Read the file
-		// FileReader fr=new FileReader("d://testFile1.txt");
 		RequestDispatcher rd = request.getRequestDispatcher("/Welcome.jsp");
-		int i;
 		if (file.length() == 0) {
 			System.out.println("File is empty");
 			request.setAttribute("flag", 0);
@@ -101,6 +98,6 @@ public class WelcomeServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 
-		System.out.println(flag);
+		System.out.println("Checked-out Flag: " + flag);
 	}
 }
