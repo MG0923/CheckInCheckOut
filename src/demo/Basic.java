@@ -94,7 +94,8 @@ public class Basic extends HttpServlet {
 						out.println("<script src='vendor/jquery/jquery-3.2.1.min.js'></script>");
 						out.println("<script>");
 						out.println("$(document).ready(function(){");
-						out.println("swal ( 'Website is in Use' ,  'Please try again later. Thanks!' ,  'success' )");
+						out.println("swal ( {title:'Website is in Use' , text: 'Please try again later. Thanks!' , type: 'info',");
+						out.println("allowOutsideClick: false,allowEscapeKey: false })");
 						out.println(".then((result) => {");
 						out.println("window.location = 'login.html';");
 						out.println("});");
@@ -113,7 +114,8 @@ public class Basic extends HttpServlet {
 			out.println("<script src='vendor/jquery/jquery-3.2.1.min.js'></script>");
 			out.println("<script>");
 			out.println("$(document).ready(function(){");
-			out.println("swal ( 'Invalid! Username/Password' ,  'Please Try Again',  'error' )");
+			out.println("swal ( {title: 'Invalid Username/Password!' ,text: ' Please try again ' , type: 'error', ");
+			out.println("allowOutsideClick: false, allowEscapeKey: false})");
 			out.println(".then((result) => {");
 			out.println("window.location = 'login.html';");
 			out.println("});");
