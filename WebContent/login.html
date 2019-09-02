@@ -60,17 +60,30 @@
 						<input class="login100-form-btn" type="submit" value="Login">
 						</input>
 					</div>
+					
 					<div class="text-center p-t-136">
-						<a class="txt2" href="">
-							Copyright © 2019 - Mohit Gupta
+						<a class="txt2" href="#" onclick="testWeb()">
+							Click here to Test
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
+						</a><br><br>
+						<p class="txt2">
+							Copyright © 2019 - Mohit Gupta
+						</p>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 	<script>
+		function testWeb(){
+			var elem = document.createElement("div");
+			elem.innerHTML = "Hello <br> <strong>World<strong> ! <hr>";
+			swal ( {title:'Login Details' ,
+					//text: '<strong>Username: TestUser</strong> & Password: TestUser123',
+					html: "<i><b><h5>Username:</b> TestUser & <b>Password:</b> TestUser123</i></h5>",
+					type: 'info',allowOutsideClick: false,
+					allowEscapeKey: false } );
+		}
 		function nospaces(t) {
 			if (t.value.match(/\s/g)) {
 				t.value = t.value.replace(/\s/g, '');
@@ -84,6 +97,8 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src='Sweet_JS/sweetalert2.js'></script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
 	<script >

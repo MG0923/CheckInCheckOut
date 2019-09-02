@@ -30,6 +30,7 @@ public class Basic extends HttpServlet {
 		Calendar cal = Calendar.getInstance(); // fetch date and time
 		PrintWriter out = response.getWriter();
 
+		userDetails.put("TestUser", "TestUser123");  //for testuser login
 		userDetails.put("MohitGupta", "mohit123");
 		userDetails.put("ArpitShukla", "arpit123");
 		userDetails.put("ArifKhan", "arif123");
